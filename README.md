@@ -12,6 +12,19 @@ Read [`docs/CHANGES_2_1.md`](./docs/CHANGES_2_1.md) first for the current defaul
 
 The system proposes specific pending decisions, identity hypotheses and immediate threats. It checks the supplied episode for answers, then lets an editor approve, reject, edit, or add a missed question. It does not predict engagement or track payoffs across later episodes.
 
+## Actual six-case Qwen inference — 8 November 2026
+
+Run **`20261108T081419_789562`** is a **completed Qwen3-14B GPU inference run**, not stubbed output. The following **unaltered model predictions** and metrics from the user-supplied run are published:
+
+- [Predictions and statuses (CSV)](./results/20261108T081419_789562/review.csv)
+- [Episode processing summary (CSV)](./results/20261108T081419_789562/episode_summary.csv)
+- [Inference telemetry (JSON)](./results/20261108T081419_789562/run_metrics.json)
+- [Independent output audit and observed failures](./outputs/20261108T081419_789562/AUDIT.md)
+
+The model processed **6/6 synthetic cases**, generated **7 question candidates** in **14 calls**, and recorded **zero unrecovered pipeline errors**. The **6/6 agreement** refers to *open category labels only*, not comprehensive semantic accuracy. In case **209**, the verifier incorrectly treats a steward's failed request for a guest's name as having resolved whether he eventually learns her identity. That failure is preserved, not silently corrected. One extraction attempt exceeded its token budget before a successful retry. Total run wall time **877.77 seconds** (14m 38s). No human-review decisions or generalization claims.
+
+**Full original raw archive:** `20261108T081419_789562 (1).zip` includes `results.json`, parsed source passages, source/environment hashes, an HTML report, and all unedited `calls/*.json`. The repository currently contains the verified CSV and metrics subset plus audit; **the complete binary raw ZIP has not yet been uploaded to GitHub**. Obtain it from the run author for inspection. Do not treat the published subset as a substitute for all raw model calls.
+
 ## Submission links
 
 - **Prototype:** this public repository and the runnable notebook above.
