@@ -2,6 +2,16 @@
 
 **Reproducible prototype:** [`Script_Review_Submission_Ready.ipynb`](./Script_Review_Submission_Ready.ipynb) runs the full Qwen3-14B + Gradio workflow on Kaggle T4×2. [`source/Script_Review_Source_Repo.zip`](./source/Script_Review_Source_Repo.zip) contains the complete Python source, fixtures, tests, and historical diagnostic outputs. The Kaggle notebook automatically extracts the same archive and runs the project; no manual ZIP extraction is needed inside Kaggle. All live-model accuracy claims require an actual GPU run; old diagnostic outputs are kept clearly separate.
 
+## Start here: visual architecture for the 3-minute demonstration
+
+**[OPEN THE FULL PIPELINE DIAGRAM + STEP-BY-STEP EXPLANATION](./docs/ARCHITECTURE_WALKTHROUGH.md)**
+
+**[OPEN THE TIMED 3-MINUTE VIDEO SCRIPT](./docs/VIDEO_SCRIPT.md)**
+
+The architecture page explains the problem, a fully rendered GitHub Mermaid flowchart, Kaggle notebook stages, two-stage Qwen3-14B extraction/verification, how the Gradio editor reviews evidence, actual results and failures, and a proposed company-wide scaling architecture. It is designed to be shown on screen while narrating.
+
+**Current scope:** upload and analyze **multiple episodes in one batch**; each question is checked against its own full episode. Automatic tracking of a hook's resolution in later episodes is **not** implemented yet.
+
 # Current revision: desk-2.1
 
 Read [`docs/CHANGES_2_1.md`](./docs/CHANGES_2_1.md) first for the current defaults and test procedure. For the submission edition, use `Script_Review_Submission_Ready.ipynb` (the original desk-2.1 notebook is retained inside the source archive). The notebook defaults to six original test inputs with real Qwen inference before launching the app.
