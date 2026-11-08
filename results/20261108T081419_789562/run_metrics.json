@@ -1,0 +1,11 @@
+{
+  "episodes": 6,
+  "model_candidates": 7,
+  "wall_seconds": 877.77,
+  "generation_calls": 14,
+  "generation_seconds": 585.31,
+  "input_tokens": 9980,
+  "output_tokens": 4687,
+  "editor_reviewed": 0,
+  "limitation": "Counts and latency only; not semantic accuracy, engagement lift, or time saved."
+}
