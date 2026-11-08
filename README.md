@@ -1,10 +1,10 @@
 # Script Review — Kuku AI Generalist Assignment · Problem 3
 
-**Reproducible prototype:** [`Script_Review_Submission_Ready.ipynb`](./Script_Review_Submission_Ready.ipynb) runs the full Qwen3-14B + Gradio workflow on Kaggle T4×2. [`source/`](./source/) holds the source and original synthetic test cases. All live-model accuracy claims require an actual GPU run; old diagnostic outputs are kept clearly separate.
+**Reproducible prototype:** [`Script_Review_Submission_Ready.ipynb`](./Script_Review_Submission_Ready.ipynb) runs the full Qwen3-14B + Gradio workflow on Kaggle T4×2. [`source/Script_Review_Source_Repo.zip`](./source/Script_Review_Source_Repo.zip) contains the complete Python source, fixtures, tests, and historical diagnostic outputs. The Kaggle notebook automatically extracts the same archive and runs the project; no manual ZIP extraction is needed inside Kaggle. All live-model accuracy claims require an actual GPU run; old diagnostic outputs are kept clearly separate.
 
 # Current revision: desk-2.1
 
-Read CHANGES_2_1.md first for the current defaults and test procedure. For the submission edition, use `Script_Review_Submission_Ready.ipynb` (the original desk-2.1 notebook is retained inside the source archive). The notebook defaults to six original test inputs with real Qwen inference before launching the app.
+Read [`docs/CHANGES_2_1.md`](./docs/CHANGES_2_1.md) first for the current defaults and test procedure. For the submission edition, use `Script_Review_Submission_Ready.ipynb` (the original desk-2.1 notebook is retained inside the source archive). The notebook defaults to six original test inputs with real Qwen inference before launching the app.
 
 # Cliffhanger Desk
 
@@ -12,10 +12,17 @@ Read CHANGES_2_1.md first for the current defaults and test procedure. For the s
 
 The system proposes specific pending decisions, identity hypotheses and immediate threats. It checks the supplied episode for answers, then lets an editor approve, reject, edit, or add a missed question. It does not predict engagement or track payoffs across later episodes.
 
+## Submission links
+
+- **Prototype:** this public repository and the runnable notebook above.
+- **Raw outputs:** the notebook generates a ZIP after a real Qwen3-14B GPU run. The repository deliberately does not fabricate final-model outputs. Historical v1.1 diagnostic calls inside the source archive are labeled as such.
+- **Live Gradio UI:** only available while the Kaggle GPU session remains running; use the printed temporary `gradio.live` URL.
+- **Scope:** within-episode cliffhanger/question review, **not** cross-episode resolution tracking.
+
 ## Run on Kaggle (recommended)
 
-1. Import `Cliffhanger_Desk_Submission.ipynb`. Enable **Internet** and **GPU T4 x2**. Use Python 3.10-3.13.
-2. Run the notebook from the top. The default batch uses two original fictional examples, so it needs no uploaded dataset.
+1. Import [`Script_Review_Submission_Ready.ipynb`](./Script_Review_Submission_Ready.ipynb). Enable **Internet** and **GPU T4 x2**. Use Python 3.10-3.13.
+2. Run the notebook from the top. The submission notebook runs six original synthetic cases by default and exports a genuine model-output ZIP; no private dataset is needed.
 3. For assignment scripts, attach a **private** dataset, set `input_mode` to `dataset`, set `input_dir` to that dataset folder, and choose `episode_ids` (default `[3,9]`). Set `[]` to select the first `max_episodes` episodes.
 4. The batch run creates JSON, CSV, an HTML review report, raw calls, timing, and a ZIP. Inspect failures as well as proposals.
 5. To open the Gradio app, set `LAUNCH_APP=True` in the app-launch cell. It prints a login and a temporary Gradio URL in the server log. If the tunnel is unavailable, use the batch outputs; source also runs locally.
