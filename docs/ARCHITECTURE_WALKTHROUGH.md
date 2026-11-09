@@ -12,7 +12,7 @@ We chose **Problem 3** because it let us investigate an upstream story-quality b
 
 **Intended user:** a story editor. **Decision:** does this episode end with a concrete, supported question, and was it already answered? **Output:** a reviewable list with original evidence and human approval.
 
-## 2. The complete architecture — show this diagram in your video
+## 2. The complete architecture 
 
 ```mermaid
 flowchart TD
